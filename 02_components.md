@@ -6,7 +6,7 @@ Un componente puede ser escrito utilizando JSX o JavaScript:
 
 Con JSX:
 
-```javascript
+```js
 var HelloMessage = React.createClass({
   render: function() {
     return <div>Hello {this.props.name}</div>;
@@ -21,7 +21,6 @@ Con JavaScript:
 ```javascript
 var HelloMessage = React.createClass({
   displayName: "HelloMessage",
-
   render: function render() {
     return React.createElement(
       "div",            // nombre del componente
@@ -45,7 +44,7 @@ React maneja dos términos básicos: Componentes y Elementos. Mientras los Compo
 
 Cuando pensamos en componentes reutilizables tratamos de imaginar una vista como un conjunto de objetos que pueden repetirse (por ejemplo: un botón o un elemento de lista).
 
-```javascript
+```jsx
 var MoviePoster = React.createClass({
   render: function() {
     var posterBaseURL = 'https://image.tmdb.org/t/p/';
@@ -54,9 +53,9 @@ var MoviePoster = React.createClass({
   }
 });
 
-ReactDOM.render(<MoviePoster posterSize="w185" posterPath="/2lECpi35Hnbpa4y46JX0aY3AWTy.jpg" />), document.querySelector('#movie-1'));
+ReactDOM.render(<MoviePoster posterSize="w185" posterPath="/2lECpi35Hnbpa4y46JX0aY3AWTy.jpg" />, document.querySelector('#movie-1'));
 
-ReactDOM.render(<MoviePoster posterSize="w185" posterPath="/4ctv9pxKpwjTFevWQbvaqXkXbPF.jpg" />), document.querySelector('#movie-2'));
+ReactDOM.render(<MoviePoster posterSize="w185" posterPath="/4ctv9pxKpwjTFevWQbvaqXkXbPF.jpg" />, document.querySelector('#movie-2'));
 ```
 
 ## Atributos: Props & States
@@ -65,7 +64,7 @@ Un punto importante a tener en cuenta cuando creamos componentes reutilizables e
 
 Una propiedad (o *prop*) dentro de un componente de React es la data (o el *modelo*) que está asociado a esa parte de la vista. React utiliza estos *props* para mostrar información, y pueden ser de cualquier tipo (desde cadenas hasta funciones).
 
-```javascript
+```jsx
 var MovieLikeCounter = React.createClass({
   render: function() {
     var message;
@@ -89,7 +88,7 @@ ReactDOM.render(<MovieLikeCounter likes={1} />, document.querySelector("#movie-3
 
 Por otro lado, un componente de React tiene estados, o *states*, que permite hacer una interfaz interactiva y manejar diferentes estados dentro de una vista. Al actualizar un *state*, React verifica el nuevo estado y renderiza las partes del componente que son afectados por dicho estado.
 
-```javascript
+```jsx
 var MovieLikeButton = React.createClass({
   getInitialState: function() {
     return { liked: false }
@@ -114,13 +113,15 @@ var MovieLikeButton = React.createClass({
 ReactDOM.render(<MovieLikeButton />, document.querySelector("#movie-4"));
 ```
 
+Como mencioné antes, una propiedad también puede ser una función. Esto permite agregarle funcionalidades a nuestras vistas a través del uso de eventos.
+
 Dentro de un componente podemos definir un estado inicial, como en este caso, utilizando la función `getInitialState`.
 
 ## Composition y componentes hijos
 
 Al dividir una vista en componentes significa tener que agrupar componentes para crear vistas. A esto le llamamos *composition*. Los componentes que se encuentran agrupados dentro de otro componente son llamados *componentes hijos*. En este caso, agrupamos los componentes definidos anteriormente y tenemos tres componentes hijos:
 
-```javascript
+```jsx
 var MovieItem = React.createClass({
   render: function() {
     return (
@@ -130,7 +131,7 @@ var MovieItem = React.createClass({
         <MovieLikeButton />
       </div>
     );
-  };
+  }
 });
 
 ReactDOM.render(<MovieItem posterPath="/4ctv9pxKpwjTFevWQbvaqXkXbPF.jpg" likes={1} />, document.querySelector("#movie-5"));
@@ -140,7 +141,7 @@ ReactDOM.render(<MovieItem posterPath="/4ctv9pxKpwjTFevWQbvaqXkXbPF.jpg" likes={
 
 Los componentes hijos no solo sirven para agrupar componentes. También podemos la agrupación de estos componentes, como en este ejemplo:
 
-```javascript
+```jsx
 var movies = [
   {
     posterPath: "/811DjJTon9gD6hZ8nCjSitaIXFQ.jpg",
@@ -166,7 +167,7 @@ var MovieCollection = React.createClass({
         return <MovieItem posterPath={movie.posterPath} likes={movie.likes} />
       })}</section>
     );
-  };
+  }
 });
 
 ReactDOM.render(<MovieCollection movies={movies} />, document.querySelector("#movies"));

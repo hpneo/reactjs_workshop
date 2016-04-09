@@ -5,12 +5,15 @@ Este material agrupa los conceptos básicos de React junto a ejemplos sencillos 
 ## Temario
 
 1. [Introducción a React](01_basics.md):
-  * Vistas
-  * Programación declarativa
-  * Virtual DOM
-  * Components
-  * JSX
-  * Server-side React
+  * Conceptos
+    * Vistas
+    * Programación declarativa
+    * Virtual DOM
+    * Components
+    * JSX
+    * Server-side React
+  * Instalación
+  * Uso
 2. [Components](02_components.md):
   * Componentes reutilizables
   * Atributos: Props & States

@@ -6,7 +6,7 @@ React viene con muchos conceptos nuevos, por lo que es importante comentarlos de
 
 ### Vistas
 
-React es una bibilioteca que solo se encarga de construir vistas para nuestras aplicaciones, por lo que puede ser utilizada junto a otras bibliotecas o frameworks, como Backbone, Angular, Ember, incluso PhoneGap.
+React es una biblioteca que solo se encarga de construir vistas para nuestras aplicaciones, por lo que puede ser utilizada junto a otras bibliotecas o frameworks, como Backbone, Angular, Ember, incluso PhoneGap.
 
 ### Programación declarativa
 

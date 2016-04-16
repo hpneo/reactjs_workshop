@@ -252,7 +252,7 @@ La lista completa de eventos está disponible en [la documentación de React](ht
 
 ## Referencias a nodos DOM
 
-React permite manejar referencias a los elementos que definimos mediante JSX, estas referencias pueden ser tanto a instancias de componentes de React como a nodos DOM. Esto es útil cuando necesitamos dinamizar algun elemento usando jQuery u otra biblioteca:
+React permite manejar referencias a los elementos que definimos mediante JSX, estas referencias pueden ser tanto a instancias de componentes de React como a nodos DOM. Esto es útil cuando necesitamos dinamizar algún elemento usando jQuery u otra biblioteca que modifique el DOM:
 
 ```javascript
 var MovieLikeCounter = React.createClass({
